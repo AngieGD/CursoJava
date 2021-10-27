@@ -1,4 +1,3 @@
-
 package domain;
 
 /**
@@ -7,23 +6,15 @@ package domain;
  */
 public class Persona {
 
-    public static int getContadorPersonas() {
-        return contadorPersonas;
-    }
-
-    public static void setContadorPersonas(int aContadorPersonas) {
-        contadorPersonas = aContadorPersonas;
-    }
-    
     private int idPersona;
     private String nombre;
     private static int contadorPersonas;
-    
-    public Persona(String nombre){
+
+    public Persona(String nombre) {
         this.nombre = nombre;
         // incrementar el contador
         Persona.contadorPersonas++;
-        
+
         //Asignar el nuevo valor
         this.idPersona = Persona.contadorPersonas;
     }
@@ -44,8 +35,19 @@ public class Persona {
         this.nombre = nombre;
     }
 
+    public static int getContadorPersonas() {
+        return contadorPersonas;
+    }
 
+    public static void setContadorPersonas(int aContadorPersonas) {
+        contadorPersonas = aContadorPersonas;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + '}';
+    }
     
     
-    
+
 }
