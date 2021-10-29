@@ -13,9 +13,16 @@ public class Empleado extends Persona{
     private BigDecimal sueldo;
     private static int contadorEmpleado;
 
+    public Empleado(){
+       //Super()
+        this.idEmpleado = ++ Empleado.contadorEmpleado; 
+    }
+    
     public Empleado(String nombre , BigDecimal sueldo) {
-        super (nombre);
-        this.idEmpleado = ++ Empleado.contadorEmpleado;
+        this();
+        //super (nombre);
+        this.nombre = nombre;
+        
         this.sueldo = sueldo;
     }
 
